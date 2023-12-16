@@ -36,6 +36,7 @@ import { dbRead } from '../db/client';
 import { firstDailyPostReward, imagePostedToModelReward } from '~/server/rewards';
 import { eventEngine } from '~/server/events';
 import dayjs from 'dayjs';
+import { NsfwLevel } from '@prisma/client';
 
 export const getPostsInfiniteHandler = async ({
   input,
@@ -232,7 +233,8 @@ export const addPostImageHandler = async ({
   ctx: DeepNonNullable<Context>;
 }) => {
   try {
-    return await addPostImage({ ...input, userId: ctx.user.id });
+    const result = await addPostImage({ ...input, userId: ctx.user.id });
+    return result;
   } catch (error) {
     if (error instanceof TRPCError) throw error;
     else throw throwDbError(error);
