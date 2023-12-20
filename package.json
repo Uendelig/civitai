@@ -121,7 +121,7 @@
     "meilisearch": "^0.33.0",
     "micro": "^10.0.1",
     "next": "^12.3.4",
-    "next-auth": "^4.21.1",
+    "next-auth": "^4.24.5",
     "next-axiom": "^0.17.0",
     "next-plausible": "^3.7.2",
     "next-sitemap": "^4.2.3",
